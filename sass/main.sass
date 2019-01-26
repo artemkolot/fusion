@@ -1,0 +1,390 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "../css/anime.css"
+
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+%flex-box
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $Merri
+	overflow-x: hidden
+	cursor: default
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+a
+	color: auto
+	&:hover
+		text-decoration: none
+
+h1
+	font-size: 55px
+	line-height: 90px
+	font-family: $Merri
+	font-weight: 400
+	display: inline-block
+	text-align: center
+	max-width: 755px
+	outline: 1px solid #5e5e5e
+	padding: $gutter*2
+	strong
+		color: $dark-orange
+		font-weight: inherit
+
+h2
+	font-size: 40px
+	line-height: 65px
+	font-weight: 300
+	max-width: 755px
+	color: white
+	margin: 0 auto
+	margin-bottom: $gutter*4
+	text-align: center
+
+h3
+	font-family: $Merri
+	font-weight: 400
+	font-size: 30px
+	line-height: 65px
+	text-transform: capitalize
+	margin: 0
+	padding: 0
+
+.f
+	text-transform: uppercase
+	display: inline-block
+	font-size: 21px
+	line-height: 10px
+	color: $orange
+	font-family: $OpenSans
+	border: 2px solid $orange
+	padding: 15px
+	border-radius: 100%
+
+span.section-title
+	color: $orange
+	font-family: $OpenSans
+	font-weight: 600
+	font-size: 14px
+	text-transform: uppercase
+	display: block
+	text-align: center
+	position: relative
+	padding-top: 140px
+	margin-bottom: $gutter
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 50%
+		margin-left: -1/2 + px
+		width: 1px
+		height: 130px
+		background: $orange
+
+header
+	height: 100vh
+	background: url('../img/header-bg.jpg') no-repeat center
+	background-size: cover
+	@extend %flex-box
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	overflow: hidden
+	ul
+		padding: 0
+		margin-top: $gutter
+		font-family: $OpenSans
+		margin-bottom: $gutter*3
+		@extend %flex-box
+		li
+			border-right: 1px solid $orange
+			list-style: none
+			line-height: 13px
+			padding: 0 12px
+			&:last-child
+				border: none
+			a
+				font-size: 13px
+				+transition(.3s ease)
+				color: #fff
+				text-transform: uppercase
+				&:hover
+					color: $orange
+	i
+		color: $orange
+		font-size: 18px
+
+section
+	overflow: hidden
+
+//OUR SERVICE
+.service
+	background: $grey
+	min-height: 800px
+
+.service-item
+	margin-bottom: $gutter*2
+
+.service-icon
+	color: $orange
+	font-size: 20px
+	margin-bottom: $gutter - 10px
+.service-text
+	font-family: $OpenSans
+	font-size: 14px
+	color: $text-grey
+	line-height: 27px
+	a
+		font-weight: 600
+		color: #fff
+		text-transform: uppercase
+		+transition(.3s ease)
+		&:hover
+			color: $orange
+
+
+
+.design
+	background: $dark-grey
+	min-height: 800px
+
+
+
+
+.testimonials
+	min-height: 1000px
+	background: $grey
+	padding-bottom: $gutter*6
+	&-slider
+		background: $dark-grey
+		width: 100%
+		min-height: 375px
+		padding: 0 $gutter*2
+		text-align: center
+		.avatar
+			width: 70px
+			height: 70px
+			margin: 0 auto
+			margin-bottom: 40px
+			background-size: cover
+			background-position: center center
+		.testimonials-text
+			font-family: $Merri
+			font-size: 17px
+			line-height: 35px
+			color: $text-grey
+			margin-bottom: $gutter +20px
+		.testimonials-author
+			text-align: center
+			span
+				display: inline-block
+				font-family: $OpenSans
+				font-size: 14px
+				color: $orange
+				text-transform: uppercase
+				position: relative
+				&:before, &:after
+					content: ""
+					position: absolute
+					top: 6px 
+					width: 168px
+					height: 1px
+					background: #474747
+				&:before
+					left: -208px
+				&:after
+					right: -208px
+		.testimonials-pagination
+			position: relative
+			bottom: -73px
+			&-item
+				width: 30px
+				height: 3px
+				display: inline-block
+				background: #5c5c5c
+				margin: 0 24px
+				&.active
+					background: $orange
+
+//TEAM
+.team
+	background: $dark-grey
+	padding-bottom: $gutter*3	
+	+transition(.5s ease)
+	[class^='col-']
+		border-right: 1px solid $grey
+		&:nth-child(n+5)
+			.team-item
+				border-top: 1px solid $grey
+		&:nth-child(4n)
+			.team-item
+				border-right: none
+
+
+
+.team-item
+	min-height: 300px
+	overflow: hidden
+	position: relative
+	padding-top: $gutter*2
+	//+transition(.2s ease)
+	&-discription
+		+transition(.3cs ease)
+		color: $text-light-grey
+		text-align: left
+		font-family: $OpenSans
+		line-height: 25px
+		width: 180px
+		float: right
+		font-size: 13px
+		position: absolute
+		right: 10px
+		top: 10px
+		visibility: hidden
+		opacity: 0
+	&-photo
+		height: 121px
+		width: 121px
+		position: relative
+		top: 0
+		left: 50%
+		margin-left: -60.5px
+		+transition(.6s ease)
+		.wrap-photo
+			width: 100%
+			height: 100%
+			border-radius: 100%
+			overflow: hidden
+			img
+				width: 100%
+	&-member
+		display: inline-block
+		width: 121px
+		left: 50%
+		margin-left: -60.5px
+		position: absolute
+		font-family: $OpenSans
+		text-align: center
+		+transition(.6s ease)
+		span
+			font-size: 14px
+			font-weight: 600
+			text-transform: uppercase
+			color: $orange
+		i
+			font-style: normal
+			display: block
+			color: #fff
+			font-size: 13px
+
+.team-item-photo
+	&:before
+		+transition(.5s ease)
+		content: ""
+		position: absolute
+		background: $orange
+		width: 0
+		height: 1px
+		top: -15px
+		left: -15px
+	&:after
+		+transition(.5s ease)
+		content: ""
+		position: absolute
+		background: $orange
+		height: 0
+		width: 1px
+		top: -15px
+		left: -15px
+
+
+.team-item:hover
+	padding: 15px 10px
+	text-align: left
+	.team-item-photo
+		width: 50px
+		height: 50px
+		margin-left: 0
+		top: 0
+		left: 5px
+		&:after
+			height: 65px
+		&:before
+			width: 70px
+	.team-item-member
+		text-align: left
+		position: absolute
+		top: 115px
+		left: -20px
+		margin-left: 0
+		//backface-visibility: hidden
+		transform: rotate(90deg)
+	.team-item-discription
+		+transition(.5s ease)
+		transition-delay: 0.4s
+		top: 10px
+		visibility: visible
+		opacity: 1
+
+
+
+
+
+
+.contacts
+	background: $light-grey
+form
+	border: 1px solid #000
+	padding: $gutter +20px
+	background: $dark-grey
+	max-width: 752px
+	min-height: 490px
+	input
+		width: 100%
+		margin-bottom: 20px
+	textarea
+		width: 100%
+	[class^='col-']
+		outline: 1px solid red
+
+
+		
+@import "media" // Always at the end
+
+
