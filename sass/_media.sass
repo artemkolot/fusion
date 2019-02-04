@@ -25,24 +25,41 @@
 		padding: 0 30px
 		outline: none
 	h2
-		font-size: 30px
+		font-size: 25px
+		line-height: 50px
+		margin: $gutter 0
+
 	[class^='col-']
 		border: none !important
 	.team-item
 		border: none !important
+ 		border-left: 1px solid $grey 
 
-	.team
-		[class^='col-']
-			border-right: none
-			&:nth-child(n+5)
-				.team-item
-					border-top: 1px solid $grey
-			&:nth-child(2n)
-				.team-item
-					//border-left: 1px solid $grey 
+	.testimonials
+		&-slider>.testimonials-author
+			span
+				&:before, &:after
+					width: 168/2 +px 
+					background: white 
+				&:before
+					left: -104px
+				&:after
+					right: -104px
+		&-companies
+			margin-top: $gutter
+			margin-bottom: $gutter
+			img
+				max-width: 80px
 // ≥768px
 +media-breakpoint-down(sm)
 
+	.testimonials-slider
+		padding: 0 15px
+		.testimonials-text
+			font-size: 14px
+			margin-bottom: $gutter
+	.contacts-adress
+		text-align: center
 // ≥576px
 +media-breakpoint-down(xs)
 
@@ -50,7 +67,9 @@
 @media screen and (max-width: 1200px)
 	.team-item-discription
 		width: 70%
-
+	.contacts-adress
+		span
+			margin-right: 5px !important
 
 
 /*==========  Mobile First  ==========*/

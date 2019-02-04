@@ -10,16 +10,16 @@
 	<meta name="description" content="">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
+	<!-- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
 	<!-- Template Basic Images Start -->
 	<meta property="og:image" content="path/to/image.jpg">
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 	<!-- Template Basic Images End -->
-	
+	<script src="js/bootstrap.js"></script>
 	<!-- Custom Browsers Color Start -->
 	<meta name="theme-color" content="#000">
 	<!-- Custom Browsers Color End -->
@@ -28,7 +28,6 @@
 </head>
 
 <body>
-
 	<header>
 		<h1 class="fadeInDown animated">We’re <strong>Fusion</strong>, We Build Things for Human</h1>
 		<ul class="fadeInLeftBig animated">
@@ -49,6 +48,7 @@
 			
 		</div>
 	</header>
+
 	<main>
 		<section class="service">
 			<span class="section-title">our service</span>
@@ -98,7 +98,7 @@
 		<section class="design">
 			<div class="container">
 				<div class="row">
-
+					
 				</div>
 			</div>
 		</section>
@@ -107,28 +107,75 @@
 			<div class="container">
 				<h2>We have worked with some amazing companies around the world</h2>
 				<div class="row">
-					<div class="companies">
-
+					<div class="col-12">
+						<div class="testimonials-companies justify-content-md-between justify-content-center align-items-center flex-md-row flex-column">
+							<img src="img/companies/autodesk.svg" alt="">
+							<img src="img/companies/mastercard.svg" alt="">
+							<img src="img/companies/mtv.svg" alt="">
+							<img src="img/companies/ntuit.svg" alt="">
+							<img src="img/companies/Pinteres.svg" alt="">
+							<img src="img/companies/sales.svg" alt="">
+							<img src="img/companies/Visa.svg" alt="">
+						</div>
 					</div>
-					<div class="col-md-8 offset-md-2 ">
-						<div class="testimonials-slider">
-							<div class="avatar" style="background-image: url(img/person5.jpg)"></div>
-							<div class="testimonials-text">
-								<p lang="en">
-									<q>These cartridges can be replaced by the printer ink of similar brand. Compatible Inkjet Cartridge will help you to make extra-ordinary savings with money back guarantee. As soon as the cartridge gets empty the ink that it contains begins to dry</q>
-								</p>
-							</div>
-							<div class="testimonials-author">
-								<span>Anthony Watkins</span>
-							</div>
-							<div class="testimonials-pagination">
-								<a href="#" class="testimonials-pagination-item"></a>
-								<a href="#" class="testimonials-pagination-item"></a>
-								<a href="#" class="testimonials-pagination-item active"></a>
-								<a href="#" class="testimonials-pagination-item"></a>
-								<a href="#" class="testimonials-pagination-item"></a>
+					<div class="col-lg-8 offset-lg-2 col-12">
+
+
+						<!-- SLIDER -->
+						<div id="carouselExampleIndicators" class="carousel slide testimonials-slider" data-ride="carousel">
+							<ol class="carousel-indicators testimonials-pagination">
+								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="testimonials-pagination-item active"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1" class="testimonials-pagination-item"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="2" class="testimonials-pagination-item"></li>
+							</ol>
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<div class="avatar" style="background-image: url(img/person5.jpg)"></div>
+									<div class="testimonials-text">
+										<p lang="en">
+											<q>These cartridges can be replaced by the printer 
+												ink of similar brand. Compatible Inkjet Cartridge will 
+												help you to make extra-ordinary savings with money back guarantee.
+											As soon as the cartridge gets empty the ink that it contains begins to dry</q>
+										</p>
+									</div>
+									<div class="testimonials-author">
+										<span>Anthony Watkins</span>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="avatar" style="background-image: url(img/person4.jpg)"></div>
+									<div class="testimonials-text">
+										<p lang="en">
+											<q>These cartridges can be replaced by the printer 
+												ink of similar brand. Compatible Inkjet Cartridge will 
+												help you to make extra-ordinary savings with money back guarantee.
+											As soon as the cartridge gets empty the ink that it contains begins to dry</q>
+										</p>
+									</div>
+									<div class="testimonials-author">
+										<span>Artem Kolot</span>
+									</div>
+								</div>
+								<div class="carousel-item">
+									<div class="avatar" style="background-image: url(img/person3.jpg)"></div>
+									<div class="testimonials-text">
+										<p lang="en">
+											<q>These cartridges can be replaced by the printer 
+												ink of similar brand. Compatible Inkjet Cartridge will 
+												help you to make extra-ordinary savings with money back guarantee.
+											As soon as the cartridge gets empty the ink that it contains begins to dry</q>
+										</p>
+									</div>
+									<div class="testimonials-author">
+										<span>Daniels Potter</span>
+									</div>
+								</div>
 							</div>
 						</div>
+						<!-- SLIDER END -->
+
+
 					</div>
 				</div>
 			</div>
@@ -139,7 +186,7 @@
 				<h2>Our Amazing Team</h2>
 				<div class="row no-gutters">
 					<div class="col-xl-3 col-lg-6 col-12">
-						<div class="team-item">
+						<div class="team-item active">
 							<div class="team-item-photo">
 								<div class="wrap-photo">
 									<img src="img/team-member.jpg" alt="">
@@ -276,36 +323,79 @@
 				<div class="row justify-content-center">
 					<div class="col-lg-8">
 						<div class="contacts-item">
-							<form action="">
+							<form action="#" id="form">
 								<div class="row">
 									<div class="col-md-6">
+										<input name="name" id="name" type="text" autocomplete="off">
+										<label for="name">Your name</label>
+									</div>
+									<div class="col-md-6">
+										<input type="email">
+										<label>Your email</label>
+										
+									</div>	
+									<div class="col-md-6">
 										<input type="text">
-										<input type="text">
+										<label>company</label>										
 									</div>
 									<div class="col-md-6">
 										<input type="text">
-										<input type="text">
+										<label>subject</label>
 									</div>
 									<div class="col-md-12">
-										<textarea></textarea>
+										<textarea name="message" rows="15"></textarea>
+										<label>Your message</label>
 									</div>
+									<button type="submit" class="btn">GET IN TOUCH &#8594;</button>
 								</div>
-								<!-- <input type="text">
-								<input type="text">
-								<input type="text">
-								<input type="text">
-								<br>
-								<textarea></textarea>
-								<button type="submit">get in tuch</button> -->
 							</form>
 						</div>
 					</div>
+				</div>
+				<div class="row contacts-adress justify-content-center">
+					<div class="col-lg-8 col-12">
+						<div class="row justify-content-md-between justify-content-center no-gutters">
+							<div class="col-lg-auto">
+								<div class="f">F</div>
+							</div>
+							<div class="col-md-3 col-12">
+								<h3>California Office</h3>
+								<ul>
+									<li>4243 Woodland Terrace</li>
+									<li>Sacramento, CA 95814</li>
+									<li>916 753 2645</li>
+								</ul>
+							</div>
+							<div class="col-md-3 col-12">
+								<h3>New york Office</h3>
+								<ul>
+									<li>885 Oakwood Avenue</li>
+									<li>New York, NY 10013</li>
+									<li>212 660 0744</li>
+								</ul>
+							</div>
+							<div class="col-md-3 col-12">
+								<h3>Other Contact</h3>
+								<ul>
+									<li>jobs@templateocean.com</li>
+									<li>
+										<span class="social_facebook_circle"></span>
+										<span class="social_twitter_circle"></span>
+										<span class="social_pinterest_circle"></span>
+										<span class="social_instagram_circle"></span>
+										<span class="social_dribbble_circle"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</footer>
 	</main>
 
 	<script src="js/scripts.min.js"></script>
-
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

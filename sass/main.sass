@@ -2,7 +2,7 @@
 @import "fonts"
 @import "libs"
 @import "../css/anime.css"
-
+@import "../css/elegant.css"
 
 ::placeholder
 	color: #666
@@ -73,7 +73,7 @@ h2
 	max-width: 755px
 	color: white
 	margin: 0 auto
-	margin-bottom: $gutter*4
+	margin-bottom: $gutter*4-20
 	text-align: center
 
 h3
@@ -184,17 +184,25 @@ section
 	background: $dark-grey
 	min-height: 800px
 
-
-
-
 .testimonials
 	min-height: 1000px
 	background: $grey
 	padding-bottom: $gutter*6
+	&-companies
+		margin-bottom: $gutter*4-20
+		@extend %flex-box
+		//height: 60px
+		img
+			max-height: 55px
+			margin-bottom: $gutter
+			&:hover
+				svg
+					fill: #000 !important
 	&-slider
 		background: $dark-grey
 		width: 100%
 		min-height: 375px
+		height: 100%
 		padding: 0 $gutter*2
 		text-align: center
 		.avatar
@@ -219,6 +227,7 @@ section
 				color: $orange
 				text-transform: uppercase
 				position: relative
+				margin-bottom: $gutter
 				&:before, &:after
 					content: ""
 					position: absolute
@@ -231,12 +240,21 @@ section
 				&:after
 					right: -208px
 		.testimonials-pagination
-			position: relative
-			bottom: -73px
+			@extend %flex-box
+			//outline: 1px solid red
+			cursor: pointer
+			justify-content: center
+			position: absolute
+			bottom: -30px	
+			left: 0
+			width: 100%
+			margin: 0
+			padding: 0
+			z-index: 99999;
 			&-item
+				list-style: none;
 				width: 30px
 				height: 3px
-				display: inline-block
 				background: #5c5c5c
 				margin: 0 24px
 				&.active
@@ -265,7 +283,7 @@ section
 	padding-top: $gutter*2
 	//+transition(.2s ease)
 	&-discription
-		+transition(.3cs ease)
+		+transition(.3s ease)
 		color: $text-light-grey
 		text-align: left
 		font-family: $OpenSans
@@ -285,7 +303,7 @@ section
 		top: 0
 		left: 50%
 		margin-left: -60.5px
-		+transition(.6s ease)
+		+transition(.7s ease)
 		.wrap-photo
 			width: 100%
 			height: 100%
@@ -301,7 +319,7 @@ section
 		position: absolute
 		font-family: $OpenSans
 		text-align: center
-		+transition(.6s ease)
+		+transition(.5s ease)
 		span
 			font-size: 14px
 			font-weight: 600
@@ -315,7 +333,7 @@ section
 
 .team-item-photo
 	&:before
-		+transition(.5s ease)
+		+transition(.8s ease)
 		content: ""
 		position: absolute
 		background: $orange
@@ -334,7 +352,7 @@ section
 		left: -15px
 
 
-.team-item:hover
+.team-item.active
 	padding: 15px 10px
 	text-align: left
 	.team-item-photo
@@ -353,7 +371,7 @@ section
 		top: 115px
 		left: -20px
 		margin-left: 0
-		//backface-visibility: hidden
+		backface-visibility: hidden
 		transform: rotate(90deg)
 	.team-item-discription
 		+transition(.5s ease)
@@ -369,22 +387,122 @@ section
 
 .contacts
 	background: $light-grey
+	height: 100%
+	&-adress
+		margin-bottom: $gutter*4
+		.f
+			margin-bottom: $gutter
+		h3
+			line-height: 1
+			text-transform: uppercase
+			font-size: 14px
+			color: #fff
+			font-weight: 600
+			font-family: $OpenSans
+			margin-bottom: $gutter
+			padding: 0
+		ul
+			margin-bottom: $gutter*2
+			padding: 0
+			li
+				font-family: $OpenSans
+				color: $text-light-grey
+				list-style: none
+				font-size: 14px
+				line-height: 27px
+				span
+					margin-top: 23px
+					display: inline-block
+					font-size: 22px
+					margin-right: 10px
+					line-height: 27px
+					cursor: pointer
+					+transition(.5s ease)
+					&:hover
+						&:nth-child(1)
+							color: #3a589e
+						&:nth-child(2)
+							color: #429cd6
+						&:nth-child(3)	
+							color: #cd2029	
+						&:nth-child(4)	
+							color: #f77833			
+						&:nth-child(5)	
+							color: #ea4c8a				
 form
-	border: 1px solid #000
 	padding: $gutter +20px
 	background: $dark-grey
 	max-width: 752px
-	min-height: 490px
-	input
+	//max-height: 500px
+	margin-bottom: $gutter*4
+	-webkit-box-shadow: 2px 2px 18px 3px rgba(0,0,0,0.37);
+	-moz-box-shadow: 2px 2px 18px 3px rgba(0,0,0,0.37);
+	box-shadow: 2px 2px 18px 3px rgba(0,0,0,0.37);
+	label
+		position: absolute
+		top: 15%
+		left: 15px
+		font-family: $OpenSans
+		font-size: 14px
+		text-transform: uppercase
+		+transition(.5s ease)
+		&.actived
+			font-size: 11px
+			color: $orange
+			top: 10%
+			&~input
+				border-bottom: 1px solid $orange
+	input,textarea
 		width: 100%
 		margin-bottom: 20px
+		margin-top: $gutter
+		background-color: transparent
+		border: none
+		-webkit-border-radius: 0
+		padding-left: 5px
+		border-bottom: 1px solid #5c5c5c
+		font-family: $OpenSans
+		font-size: 14px
+		color: #fff
+		+transition(.5s ease)
+		&.actived
+			border-bottom-color: $orange
+		&:focus
+			background-color: inherit
+			border-bottom-color: $orange
+		&:focus+label,
+			font-size: 11px
+			color: $orange
+			top: 10%
+		
 	textarea
 		width: 100%
+		padding: 0
+		height: 30px
+		margin-bottom: 50px
 	[class^='col-']
-		outline: 1px solid red
+		//outline: 1px solid red
 
-
-		
+.btn
+	font-family: $OpenSans
+	font-size: 17px
+	color: #000
+	font-weight: 600
+	background: $orange
+	border-radius: 0
+	border: none
+	line-height: 0
+	padding: 24px 40px
+	margin: 0 auto
+	&:hover
+		background: $light-grey
+		color: $orange
+	
+button
+	&:focus
+		outline: none !important
+		border: none
+		box-shadow: 0 0 0 0!important	
 @import "media" // Always at the end
 
 
