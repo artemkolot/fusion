@@ -30,12 +30,17 @@ $(".testimonials-pagination a").on('click', function(event) {
 
 
 
-$('#fullpage').fullpage({
-	//options here
-	autoScrolling:true,
-	scrollHorizontally: false
-});
-//methods
-$.fn.fullpage.setAllowScrolling(true);
+$(".arrow").click(function() {
+    var elementClick = $(this).attr("href");
+    var destination = $(elementClick).offset().top;
+    jQuery("html:not(:animated),body:not(:animated)").animate({
+      scrollTop: destination
+    }, 1000);
+    return false;
+  });
+
 
 });
+
+
+		
