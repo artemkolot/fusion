@@ -157,32 +157,61 @@ section
 .service
 	background: $grey
 	min-height: 800px
-
-.service-item
-	margin-bottom: $gutter*2
-
-.service-icon
-	color: $orange
-	font-size: 20px
-	margin-bottom: $gutter - 10px
-.service-text
-	font-family: $OpenSans
-	font-size: 14px
-	color: $text-grey
-	line-height: 27px
-	a
-		font-weight: 600
-		color: #fff
-		text-transform: uppercase
-		+transition(.3s ease)
-		&:hover
-			color: $orange
+	&-title
+	&-item
+		margin-bottom: $gutter*2
+	&-icon
+		color: $orange
+		font-size: 20px
+		margin-bottom: $gutter - 10px
+	&-text
+		font-family: $OpenSans
+		font-size: 14px
+		color: $text-grey
+		line-height: 27px
+		a
+			font-weight: 600
+			color: #fff
+			text-transform: uppercase
+			+transition(.3s ease)
+			&:hover
+				color: $orange
 
 
 
 .design
 	background: $dark-grey
-	min-height: 800px
+	min-height: 950px
+	@extend %flex-box
+	align-items: center
+	&-slider
+		@extend %flex-box
+		width: 800px
+		height: 600px
+		background: #ccc
+		align-self: center
+	&-pagination
+		@extend %flex-box
+		cursor: pointer
+		justify-content: center
+		position: absolute
+		bottom: -30px	
+		left: 0
+		width: 100%
+		margin: 0
+		padding: 0
+		z-index: 99999;
+		&-item
+			list-style: none;
+			width: 30px
+			height: 3px
+			background: #5c5c5c
+			margin: 0 24px
+			&.active
+				background: $orange
+	&-text
+		img
+			width: 100%
 
 .testimonials
 	min-height: 1000px
@@ -241,7 +270,6 @@ section
 					right: -208px
 		.testimonials-pagination
 			@extend %flex-box
-			//outline: 1px solid red
 			cursor: pointer
 			justify-content: center
 			position: absolute
@@ -386,8 +414,9 @@ section
 
 
 .contacts
-	background: $light-grey
 	height: 100%
+	background: url('../img/header-bg.jpg') no-repeat center
+	background-size: cover
 	&-adress
 		margin-bottom: $gutter*4
 		.f
